@@ -5,7 +5,7 @@ resultado de la ejecucion imprima la cantidad de centenas, decenas y unidades */
 
 //Prototiping all the functions
 //This is for the output
-void numeroAPAlabras(int centenas, int decenas, int unidades);
+void numberToWords(int hundreds, int tens, int units);
 
  //This is to calculate the values for numbers with 3 digits...
 int valor3Digitos_centenas(int value);
@@ -28,21 +28,21 @@ int main(){
         decenas = valor3Digitos_decenas(num);
         unidades = valor3Digitos_unidades(num);
 
-        numeroAPalabras(centenas, decenas, unidades);
+        numberToWords(centenas, decenas, unidades);
     }
     else if(num >= 10 && num < 100){
         centenas = 0;
         decenas =  valor2Digitos_decenas(num);
         unidades = valor2Digitos_unidades(num);
 
-        numeroAPalabras(centenas, decenas, unidades);
+        numberToWords(centenas, decenas, unidades);
     }
     else if(num >= 0 && num < 10){
         centenas = 0;
         decenas = 0;
         unidades = num;
-        
-        numeroAPalabras(centenas, decenas, unidades);
+
+        numberToWords(centenas, decenas, unidades);
     }
 
     return 0;
@@ -90,7 +90,7 @@ int valor2Digitos_unidades(int value){
     return unidades;
 }
 
-void numeroAPalabras(int centenas, int decenas, int unidades){
+void numberToWords(int hundreds, int tens, int units){
 
-    printf("\nEl numero digitado es de %i centenas, %i decenas y %i unidades", centenas, decenas, unidades);
+    printf("\nEl numero digitado es de %i centenas, %i decenas y %i unidades", hundreds, tens, units);
 }
