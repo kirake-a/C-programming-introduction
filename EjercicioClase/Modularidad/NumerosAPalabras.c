@@ -4,15 +4,15 @@ resultado de la ejecucion imprima la cantidad de centenas, decenas y unidades */
 #include <stdio.h>
 
 //Prototiping all the functions
-    //This is for the output
+//This is for the output
 void numeroAPAlabras(int centenas, int decenas, int unidades);
 
-    //This is to calculate the values for numbers with 3 digits...
+ //This is to calculate the values for numbers with 3 digits...
 int valor3Digitos_centenas(int value);
 int valor3Digitos_decenas(int value);
 int valor3Digitos_unidades(int value);
 
-    //This is to calculate the values for numbers with 2 digits...
+ //This is to calculate the values for numbers with 2 digits...
 int valor2Digitos_decenas(int value);
 int valor2Digitos_unidades(int value);
 
@@ -26,20 +26,23 @@ int main(){
     if(num >= 100 && num < 1000){
         centenas = valor3Digitos_centenas(num);
         decenas = valor3Digitos_decenas(num);
-        unidades = valor3Digitos_unidades(decenas);
-        void numeroAPalabras(centenas, decenas, unidades);
+        unidades = valor3Digitos_unidades(num);
+
+        numeroAPalabras(centenas, decenas, unidades);
     }
     else if(num >= 10 && num < 100){
         centenas = 0;
-        decenas =  valor2Digitos(num);
+        decenas =  valor2Digitos_decenas(num);
         unidades = valor2Digitos_unidades(num);
-        void numeroAPalabras(centenas, decenas, unidades);
+
+        numeroAPalabras(centenas, decenas, unidades);
     }
     else if(num >= 0 && num < 10){
         centenas = 0;
         decenas = 0;
         unidades = num;
-        void numeroAPalabras(centenas, decenas, unidades);
+        
+        numeroAPalabras(centenas, decenas, unidades);
     }
 
     return 0;
@@ -64,9 +67,10 @@ int valor3Digitos_decenas(int value){
 }
 
 int valor3Digitos_unidades(int value){
-    int unidades;
+    int moddecenas, unidades;
 
-    unidades = value % 10;
+    moddecenas = value % 100;
+    unidades = moddecenas % 10;
 }
 
 //This other block of the code is for numbers with 2 digits...
@@ -86,7 +90,7 @@ int valor2Digitos_unidades(int value){
     return unidades;
 }
 
-void numeroAPalabras(){
+void numeroAPalabras(int centenas, int decenas, int unidades){
 
-
+    printf("\nEl numero digitado es de %i centenas, %i decenas y %i unidades", centenas, decenas, unidades);
 }
