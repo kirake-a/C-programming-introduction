@@ -50,21 +50,21 @@ float tip(float yearsOf_work, float years_company){
 
     if (yearsOf_work > 0 && yearsOf_work < 4)
     {
-        tip = 0.01;
+        tip = 0.1;
 
     }
     else if (yearsOf_work >= 4 && yearsOf_work < 7)
     {
-        tip = 0.03;
+        tip = 0.3;
 
     }
     else if (yearsOf_work >= 7 && yearsOf_work < 10)
     {
-        tip = 0.05;
+        tip = 0.5;
     }
     else if (yearsOf_work >= 10 && yearsOf_work <= years_company)
     {
-        tip = 0.07;
+        tip = 0.7;
 
     }
 
