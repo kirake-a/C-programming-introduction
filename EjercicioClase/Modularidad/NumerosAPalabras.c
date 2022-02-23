@@ -2,6 +2,7 @@
 resultado de la ejecucion imprima la cantidad de centenas, decenas y unidades */
 
 #include <stdio.h>
+#include <string.h>
 
 //Prototiping all the functions
 //This is for the output
@@ -91,6 +92,112 @@ int valor2Digitos_unidades(int value){
 }
 
 void numberToWords(int hundreds, int tens, int units){
+    char hundredsW[10], tensW[10], unitsW[10];
 
-    printf("\nEl numero digitado es de %i centenas, %i decenas y %i unidades", hundreds, tens, units);
+    switch(hundreds){
+        case 0:
+            hundredsW == "cero";
+            break;
+        case 1:
+            hundredsW == "una";
+            break;
+        case 2:
+            hundredsW == "dos";
+            break;
+        case 3:
+            hundredsW == "tres";
+            break;
+        case 4:
+            hundredsW == "cuatro";
+            break;
+        case 5:
+            hundredsW == "cinco";
+            break;
+        case 6:
+            hundredsW == "seis";
+            break;
+        case 7:
+            hundredsW == "siete";
+            break;
+        case 8:
+            hundredsW == "ocho";
+            break;
+        case 9:
+            hundredsW == "nueve";
+            break;
+        default:
+            printf("*Error*");
+    }
+
+    switch (tens){
+        case 0:
+            tensW == "cero";
+            break;
+        case 1:
+            tensW == "una";
+            break;
+        case 2:
+            tensW == "dos";
+            break;
+        case 3:
+            tensW == "tres";
+            break;
+        case 4:
+            tensW == "cuatro";
+            break;
+        case 5:
+            tensW == "cinco";
+            break;
+        case 6:
+            tensW == "seis";
+            break;
+        case 7:
+            tensW == "siete";
+            break;
+        case 8:
+            tensW == "ocho";
+            break;
+        case 9:
+            tensW == "nueve";
+            break;
+        default:
+            printf("*Error*");
+    }
+
+    switch (units){
+        case 0:
+            unitsW == "cero";
+            break;
+        case 1:
+            unitsW == "una";
+            break;
+        case 2:
+            unitsW == "dos";
+            break;
+        case 3:
+            unitsW == "tres";
+            break;
+        case 4:
+            unitsW == "cuatro";
+            break;
+        case 5:
+            unitsW == "cinco";
+            break;
+        case 6:
+            unitsW == "seis";
+            break;
+        case 7:
+            unitsW == "siete";
+            break;
+        case 8:
+            unitsW == "ocho";
+            break;
+        case 9:
+            unitsW == "nueve";
+            break;
+        default:
+            printf("*Error*");
+    }
+
+    printf("\nEl numero digitado es de %c centenas, %c decenas y %c unidades", hundredsW, tensW, unitsW);
 }
