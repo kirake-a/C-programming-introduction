@@ -79,7 +79,7 @@ int amstrong3Digits(int value, int thePower){
     sum1 = pow(hundreds, thePower) + pow(tens, thePower) + pow(units, thePower);
     sum2 = theSum(hundreds, tens, units);
 
-    //Here we evaluates if the sum 1 and the sum2 are equals if they're the truth value is 1 because it means that is an Amstrong number...
+    //Here we evaluate if the sum 1 and the sum2 are equals if they're the truth value is 1 because it means that is an Amstrong number...
     //So if it's not, the truth value is 0
     if(sum1 == sum2){
         truth_value = 1;
