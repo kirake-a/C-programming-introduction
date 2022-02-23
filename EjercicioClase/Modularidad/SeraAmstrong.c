@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
+//Prototiping all the functions
 int amstrong3Digits(int value, int thePower);
 int amstrong2Digits(int value, int thePower);
 int amstrong1Digit(int value, int thePower);
@@ -13,11 +14,16 @@ int main(){
     printf("Inserte un numero no mayor a tres cifras: ");
     scanf("%i", &num);
 
+    /*The are some ways to follow if the number has 3, 2 or 1 digit...
+    if the number has 3 digits the power_number es equal to 3, because of the conditions of the 
+    Amstrong number, so that is the same process for the next steps in the if sentence */
     if(num >= 100 && num < 1000){
         power_number = 3;
 
+        //There is a determined function for amstrong numbers with 3 digits
         amstrongV = amstrong3Digits(num, power_number);
 
+        //If the evaluation is 1 it means that the number we gave the program is an Amstrong number, so if it's 0 it is not...
         if(amstrongV == 1){
             printf("El valor evaluado es perteneciente al conjunto de Amstrong.");
         }
@@ -28,6 +34,7 @@ int main(){
     else if(num >= 10 && num < 100){
         power_number = 2;
 
+        //The same as before, there is a determine funcion for this kind of number
         amstrongV = amstrong2Digits(num, power_number);
 
         if(amstrongV == 1){
@@ -72,6 +79,8 @@ int amstrong3Digits(int value, int thePower){
     sum1 = pow(hundreds, thePower) + pow(tens, thePower) + pow(units, thePower);
     sum2 = theSum(hundreds, tens, units);
 
+    //Here we evaluates if the sum 1 and the sum2 are equals if they're the truth value is 1 because it means that is an Amstrong number...
+    //So if it's not, the truth value is 0
     if(sum1 == sum2){
         truth_value = 1;
     }
@@ -129,6 +138,7 @@ int amstrong1Digit(int value, int thePower){
     return truth_value;
 }
 
+//The sum function is to evaluate in the other functions if the number we have here and the other are equal...
 int theSum(int hundreds, int tens, int units){
     int result;
 
