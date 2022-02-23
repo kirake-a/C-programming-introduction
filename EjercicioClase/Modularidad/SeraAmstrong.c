@@ -29,11 +29,25 @@ int main(){
         power_number = 2;
 
         amstrongV = amstrong2Digits(num, power_number);
+
+        if(amstrongV == 1){
+            printf("El valor evaluado es perteneciente al conjunto de Amstrong.");
+        }
+        else if(amstrongV == 0){
+            printf("El valor evaluado NO pertenece al conjunto de Amstrong.");
+        }
     }
     else if(num >= 0 && num < 10){
         power_number = 1;
 
         amstrongV = amstrong1Digit(num, power_number);
+
+        if(amstrongV == 1){
+            printf("El valor evaluado es perteneciente al conjunto de Amstrong.");
+        }
+        else if(amstrongV == 0){
+            printf("El valor evaluado NO pertenece al conjunto de Amstrong.");
+        }
     }
     else{
         printf("Error, valor no soportado");
@@ -69,13 +83,50 @@ int amstrong3Digits(int value, int thePower){
 }
 
 int amstrong2Digits(int value, int thePower){
+    int hundreds, tens, units, sum1, sum2, truth_value;
 
-    return;
+    //Now we have a number with 2 digits, so there is no hundreds
+    hundreds = 0;
+
+    //Calculating tens
+    tens = value / 10;
+
+    //And calculating units
+    units = value % 10;
+
+    sum1 = pow(hundreds, thePower) + pow(tens, thePower) + pow(units, thePower);
+    sum2 = theSum(hundreds, tens, units);
+
+    if(sum1 == sum2){
+        truth_value = 1;
+    }
+    else{
+        truth_value = 0;
+    }
+
+    return truth_value;
 }
 
 int amstrong1Digit(int value, int thePower){
+    int hundreds, tens, units, sum1, sum2, truth_value;
 
-    return;
+    //Now in the units function there is none hundreds or tens, so they're 0
+    hundreds = 0;
+    tens = 0;
+
+    units = value;
+
+    sum1 = pow(hundreds, thePower) + pow(tens, thePower) + pow(units, thePower);
+    sum2 = theSum(hundreds, tens, units);
+
+    if(sum1 == sum2){
+        truth_value = 1;
+    }
+    else{
+        truth_value = 0;
+    }
+
+    return truth_value;
 }
 
 int theSum(int hundreds, int tens, int units){
