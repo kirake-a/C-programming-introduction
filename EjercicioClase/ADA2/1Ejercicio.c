@@ -10,11 +10,15 @@ Nota: no es necesario pedir los datos al usuario, se pueden invocar las funcione
 #include <stdio.h>
 
 int mult2Numbers(int value1, int valu2);
+int fibonacci(int cBase1, int cBase2, int n_position);
 
 int main(){
 
-    int decition, num1, num2, n_position, the_factorial;
-    int result_mult;
+    //Variables for all the seccion for the switch sentence
+    int decition, num1, num2, n_position, the_factorial, the_power;
+    //How the results are given into the switch sentence. Variables.
+    int result_mult, result_fibonacci;
+    int case_base1 = 0, case_base2 = 1;
 
     printf("1. Para la multiplicacion de dos numeros. 2. Calcular el valor de la posicion n en la sucesion de Fibonacci.");
     printf("\n3. Conocer el factorial de un numero. 4. Conocer la potencia de una base a una potencia.");
@@ -32,10 +36,24 @@ int main(){
 
             printf("\nEl resultado de la multiplicacion de %d por %d es: %d", num1, num2, result_mult);
             break;
+
         case 2:
             printf("Digite la posicion que desea conocer: ");
             scanf("%d", &n_position);
+
+            if(n_position == 1){
+                result_fibonacci = 0;
+            }
+            else if(n_position == 2){
+                result_fibonacci = 1;
+            }
+            else if(n_position > 2){
+                result_fibonacci = fibonacci(case_base1, case_base2, n_position);
+            }
+            
+            printf("El valor de fibonacci en su posicion requerida es: %d", result_fibonacci);
             break;
+
         case 3:
             printf("Usted esta calculando el factorial del numero: ");
             scanf("%d", &the_factorial);
@@ -54,4 +72,16 @@ int mult2Numbers(int value1, int value2){
     }
 
     return the_mult;
+}
+
+int fibonacci(int cBase1, int cBase2, int n_position){
+    int position, i;
+
+    for (i = 3; i <= n_position; i++){
+        position = cBase1 + cBase2;
+        cBase1 = cBase2;
+        cBase2 = position;
+    }
+
+    return position;
 }
