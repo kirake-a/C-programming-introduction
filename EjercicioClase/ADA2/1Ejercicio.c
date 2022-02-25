@@ -22,9 +22,9 @@ int main(){
     int result_mult, result_fibonacci, result_factorialNumber;
     int case_base1 = 0, case_base2 = 1;
 
-    printf("1. Para la multiplicacion de dos numeros. 2. Calcular el valor de la posicion n en la sucesion de Fibonacci.");
-    printf("\n3. Conocer el factorial de un numero. 4. Conocer la potencia de una base a una potencia.");
-    printf("\nLo que usted desea hacer es: ");
+    printf("1. Para la multiplicacion de dos numeros. \n2. Calcular el valor de la posicion n en la sucesion de Fibonacci.");
+    printf("\n3. Conocer el factorial de un numero. \n4. Conocer la potencia de una base a una potencia.");
+    printf("\n\nLo que usted desea hacer es: ");
     scanf("%d", &decition);
 
     switch(decition){
