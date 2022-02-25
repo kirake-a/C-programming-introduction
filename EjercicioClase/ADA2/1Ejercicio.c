@@ -11,25 +11,27 @@ Nota: no es necesario pedir los datos al usuario, se pueden invocar las funcione
 
 int mult2Numbers(int value1, int valu2);
 int fibonacci(int cBase1, int cBase2, int n_position);
+int factorialNumber(int factorial);
 
 int main(){
 
     //Variables for all the seccion for the switch sentence
-    int decition, num1, num2, n_position, the_factorial, the_power;
-    //How the results are given into the switch sentence. Variables.
-    int result_mult, result_fibonacci;
+    int decition, num1, num2, n_position, the_factorial, base, exponent;
+
+    //How does the results are given into the switch sentence? Variables.
+    int result_mult, result_fibonacci, result_factorialNumber;
     int case_base1 = 0, case_base2 = 1;
 
     printf("1. Para la multiplicacion de dos numeros. 2. Calcular el valor de la posicion n en la sucesion de Fibonacci.");
     printf("\n3. Conocer el factorial de un numero. 4. Conocer la potencia de una base a una potencia.");
-    printf("Lo que usted desea hacer es: ");
+    printf("\nLo que usted desea hacer es: ");
     scanf("%d", &decition);
 
     switch(decition){
         case 1:
-            printf("Digite el primer valor: ");
+            printf("\nDigite el primer valor: ");
             scanf("%d", &num1);
-            printf("Digite el segundo valor: ");
+            printf("\nDigite el segundo valor: ");
             scanf("%d", &num2);
 
             result_mult = mult2Numbers(num1, num2);
@@ -38,26 +40,41 @@ int main(){
             break;
 
         case 2:
-            printf("Digite la posicion que desea conocer: ");
+            printf("\nDigite la posicion que desea conocer: ");
             scanf("%d", &n_position);
 
+            //The fibonacci if sentence is bacause in this problem we have 2 base case (0 and 1), so they can't change...
             if(n_position == 1){
-                result_fibonacci = 0;
+                result_fibonacci = case_base1;
             }
             else if(n_position == 2){
-                result_fibonacci = 1;
+                result_fibonacci = case_base2;
             }
             else if(n_position > 2){
                 result_fibonacci = fibonacci(case_base1, case_base2, n_position);
             }
             
-            printf("El valor de fibonacci en su posicion requerida es: %d", result_fibonacci);
+            printf("\nEl valor de fibonacci en su posicion requerida es: %d", result_fibonacci);
             break;
 
         case 3:
-            printf("Usted esta calculando el factorial del numero: ");
+            printf("\nUsted esta calculando el factorial del numero: ");
             scanf("%d", &the_factorial);
+
+            result_factorialNumber = factorialNumber(the_factorial);
+
+            printf("\nEl factorial del numero %d es: %d", the_factorial, result_factorialNumber);
             break;
+
+        case 4:
+            printf("\nDigite el valor de la base: ");
+            scanf("%d", &base);
+            printf("\nInserte el valor del exponente: ");
+            scanf("%d", &exponent);
+            break;
+
+        default:
+            printf("\nOpcion invalida, es necesario REINICIAR.");
     }
 
     return 0;
@@ -84,4 +101,15 @@ int fibonacci(int cBase1, int cBase2, int n_position){
     }
 
     return position;
+}
+
+int factorialNumber(int factorial){
+
+    int i, rFactorial = 1;
+
+    for (i = 1; i <= factorial; i++){
+        rFactorial = i * rFactorial;
+    }
+
+    return rFactorial;
 }
