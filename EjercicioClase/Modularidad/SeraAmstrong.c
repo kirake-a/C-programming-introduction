@@ -6,6 +6,7 @@ int amstrong3Digits(int value, int thePower);
 int amstrong2Digits(int value, int thePower);
 int amstrong1Digit(int value, int thePower);
 int theSum(int hundreds, int tens, int units);
+void theOutput(int truth_value);
 
 int main(){
 
@@ -23,13 +24,9 @@ int main(){
         //There is a determined function for amstrong numbers with 3 digits
         amstrongV = amstrong3Digits(num, power_number);
 
-        //If the evaluation is 1 it means that the number we gave the program is an Amstrong number, so if it's 0 it is not...
-        if(amstrongV == 1){
-            printf("El valor evaluado es perteneciente al conjunto de Amstrong.");
-        }
-        else if(amstrongV == 0){
-            printf("El valor evaluado NO pertence al conjunto de Amstrong.");
-        }
+        /*This functions just work to give the output to the user(printing it on the screen), the output is given with the truth value that comes
+        from the functions that works depending with the digits of the number given */
+        theOutput(amstrongV);
     }
     else if(num >= 10 && num < 100){
         power_number = 2;
@@ -37,24 +34,14 @@ int main(){
         //The same as before, there is a determine funcion for this kind of number
         amstrongV = amstrong2Digits(num, power_number);
 
-        if(amstrongV == 1){
-            printf("El valor evaluado es perteneciente al conjunto de Amstrong.");
-        }
-        else if(amstrongV == 0){
-            printf("El valor evaluado NO pertenece al conjunto de Amstrong.");
-        }
+        theOutput(amstrongV);
     }
     else if(num >= 0 && num < 10){
         power_number = 1;
 
         amstrongV = amstrong1Digit(num, power_number);
 
-        if(amstrongV == 1){
-            printf("El valor evaluado es perteneciente al conjunto de Amstrong.");
-        }
-        else if(amstrongV == 0){
-            printf("El valor evaluado NO pertenece al conjunto de Amstrong.");
-        }
+        theOutput(amstrongV);
     }
     else{
         printf("Error, valor no soportado");
@@ -145,4 +132,16 @@ int theSum(int hundreds, int tens, int units){
     result = (hundreds * 100) + (tens * 10) + units;
 
     return result;
+}
+
+void theOutput(int truth_value){
+
+    if (truth_value == 1)
+    {
+        printf("\nEl valor evaluado es perteneciente al conjunto de Amstrong.");
+    }
+    else if (truth_value == 0)
+    {
+        printf("\nEl valor evaluado NO pertenece al conjunto de Amstrong.");
+    }
 }
