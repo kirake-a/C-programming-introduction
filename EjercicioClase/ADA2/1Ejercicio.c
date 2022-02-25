@@ -12,6 +12,7 @@ Nota: no es necesario pedir los datos al usuario, se pueden invocar las funcione
 int mult2Numbers(int value1, int valu2);
 int fibonacci(int cBase1, int cBase2, int n_position);
 int factorialNumber(int factorial);
+int exponentialNumber(int the_base, int the_exponent);
 
 int main(){
 
@@ -19,7 +20,7 @@ int main(){
     int decition, num1, num2, n_position, the_factorial, base, exponent;
 
     //How does the results are given into the switch sentence? Variables.
-    int result_mult, result_fibonacci, result_factorialNumber;
+    int result_mult, result_fibonacci, result_factorialNumber, result_exponential;
     int case_base1 = 0, case_base2 = 1;
 
     printf("1. Para la multiplicacion de dos numeros. \n2. Calcular el valor de la posicion n en la sucesion de Fibonacci.");
@@ -71,6 +72,10 @@ int main(){
             scanf("%d", &base);
             printf("\nInserte el valor del exponente: ");
             scanf("%d", &exponent);
+
+            result_exponential = exponentialNumber(base, exponent);
+
+            printf("El resultado de elevar %d a la potencia %d es: %d", base, exponent, result_exponential);
             break;
 
         default:
@@ -112,4 +117,25 @@ int factorialNumber(int factorial){
     }
 
     return rFactorial;
+}
+
+int exponentialNumber(int the_base, int the_exponent){
+    int result_exponential, accumulator = 1, i;
+
+    if(the_exponent == 0){
+        result_exponential = 1;
+    }
+    else if(the_exponent == 1){
+        result_exponential = the_base;
+    }
+    else if(the_exponent > 1){
+
+        for (i = 1; i <= the_exponent; i++){
+            accumulator = accumulator * the_base;
+        }
+
+        result_exponential = accumulator;
+    }
+
+    return result_exponential;
 }
