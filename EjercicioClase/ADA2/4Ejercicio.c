@@ -5,7 +5,6 @@ dicha funci�n debe recibir dos par�metros tipo Punto: p1(x1, y1) y p2(x2, y2
 resultado como un valor flotante. La f�rmula para encontrar la distancia entre dos puntos es: 
 distancia = raiz ( (x1 � x2) 2  + (y1 � y2) 2 ).   */
 
-
 #include <stdio.h>
 #include <math.h>
 
