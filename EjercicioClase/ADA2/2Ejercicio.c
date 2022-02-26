@@ -33,8 +33,8 @@ int main() {
 	int opcion;
 	float num1, num2, correcto;
 
-	opcion=1;
-	correcto=0;
+	opcion = 1;
+	correcto = 0;
 
 	/* El proceso do-while nos ayuda a volver a recorrer el programa de manera indeterminada, es decir, solo acaba cuando el usuario lo requiera */
 	do{
@@ -82,23 +82,20 @@ int main() {
 		
 		switch(opcion){
 		case 1:
-			correcto=fsuma(num1, num2);
+			correcto = fsuma(num1, num2);
 			break;
 		case 2:
-			correcto=frestar(num1, num2);
+			correcto = frestar(num1, num2);
 			break;
 		case 3:
-			correcto=fmultiplicar(num1, num2);
+			correcto = fmultiplicar(num1, num2);
 			break;
 		case 4:
-			correcto=fdividir(num1, num2);
+			correcto = fdividir(num1, num2);
 			break;
 		}
 		
-	} while(opcion!=0);
-
-
-
+	} while(opcion != 0);
 
 	return 0;
 }
@@ -134,7 +131,7 @@ int frestar(float num1, float num2){
 
 	printf("------------------------\n");
 
-	operacion=num1-num2;
+	operacion = num1-num2;
 
 	printf("\nEscribe el resultado de %f - %f: ", num1, num2);
 	scanf("%f", &resultado);
@@ -157,7 +154,7 @@ int fmultiplicar(float num1, float num2){
 
 	printf("------------------------\n");
 
-	operacion=num1*num2;
+	operacion = num1*num2;
 
 	printf("\nEscribe el resultado de %f * %f: ", num1, num2);
 	scanf("%f", &resultado);
@@ -180,7 +177,7 @@ int fdividir(float num1, float num2){
 
 	printf("------------------------\n");
 
-	operacion=num1/num2;
+	operacion = num1/num2;
 
 	printf("\nEscribe el resultado de %f / %f: ", num1, num2);
 	scanf("%f", &resultado);
