@@ -147,7 +147,7 @@ void funcionEspecial(){
 	char valor;
 
 	if((valor >= 32 && valor <= 64) || (valor >= 91 && valor <= 96) || (valor >= 123 && valor <= 254)){
-		printf("Este es un caracter especial. \nEs el simbolo x del codigo ASCII.")
+		printf("Este es un caracter especial. \nEs el simbolo 'x' del codigo ASCII.")
 	}
 	else{
 		printf("El caracter digitado no es un simbolo.")
