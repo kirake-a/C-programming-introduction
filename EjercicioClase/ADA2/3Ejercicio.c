@@ -32,7 +32,7 @@ int main() { //AQUI SOLO ES EL MENU PARA IR A CADA FUNCION
 		printf("\n1. Verificar si es un car�cter May�scula");
 		printf("\n2. Verificar si es un car�cter Min�scula");
 		printf("\n3. Verificar si un caracter es num�rico:");
-		printf("\n4. Otro"); //ESTE QUEDA PENDIENTE AAAAAA
+		printf("\n4. Funcion especial. Ver un simbolo."); //ESTE QUEDA PENDIENTE AAAAAA
 		printf("\n5. Convierte a may�scula un caracter");
 		printf("\n6. Convierte a min�scula un caracter");
 		printf("\n0. Fin");
@@ -46,7 +46,7 @@ int main() { //AQUI SOLO ES EL MENU PARA IR A CADA FUNCION
 			printf("\n1. Verificar si es un car�cter May�scula");
 			printf("\n2. Verificar si es un car�cter Min�scula");
 			printf("\n3. Verificar si un caracter es num�rico:");
-			printf("\n4. Otro");
+			printf("\n4. Funcion especial. Ver un simbolo.");
 			printf("\n5. Convierte de may�scula un caracter");
 			printf("\n5. Convierte de min�scula un caracter");
 			printf("\n0. Fin");
@@ -154,7 +154,7 @@ void funcionEspecial(){
 		printf("Este es un caracter especial. \nEs el simbolo %c del codigo ASCII.");
 	}
 	else{
-		printf("El caracter digitado no es un simbolo.");
+		printf("El caracter digitado no es un simbolo, es una letra o un numero.");
 	}
 }
 
