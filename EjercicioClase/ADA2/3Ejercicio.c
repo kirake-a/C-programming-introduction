@@ -4,19 +4,21 @@ Utilizando biblioteca de funciones, escribir un programa que reciban una serie d
 terminar de capturar caracteres cuando el programa lo indique y que realicen lo siguiente 
 (que imprima 1 si se cumple o 0 si no se cumple cada una de las funciones):
 
-char esmayusc(char c): verificar si es un carácter Mayúscula.
-char esminusc(char c): verificar si es un carácter Minúscula.
-char esdigito(char c): verifica si es un carácter numérico: 1, 2, 3… 9, 0.
+char esmayusc(char c): verificar si es un carï¿½cter Mayï¿½scula.
+char esminusc(char c): verificar si es un carï¿½cter Minï¿½scula.
+char esdigito(char c): verifica si es un carï¿½cter numï¿½rico: 1, 2, 3ï¿½ 9, 0.
 char essimbolo(char c): cualquier otro que no sean los anteriores.
-char amayusc(char c): convierte a mayúscula un caracter.
-char aminusc(char c): convierte a minúscula un caracter. */
+char amayusc(char c): convierte a mayï¿½scula un caracter.
+char aminusc(char c): convierte a minï¿½scula un caracter. */
 
 #include <stdio.h>
+
 //FUNCIONES --------------------------------------------------------------------
 void opciones(int opcion);
 void verficamayusculas(); //opcion1
 void verficaminusculas(); //opcion2
 void verificanumerico(); //opcion3
+void funcionEspecial();
 void mayuscaracter();//opcion5
 void minuscaracter();//opcion6
 
@@ -27,38 +29,38 @@ int main() { //AQUI SOLO ES EL MENU PARA IR A CADA FUNCION
 		printf("\n\n******************************************");
 		printf("\nOpciones:");
 		
-		printf("\n1. Verificar si es un carácter Mayúscula");
-		printf("\n2. Verificar si es un carácter Minúscula");
-		printf("\n3. Verificar si un caracter es numérico:");
+		printf("\n1. Verificar si es un carï¿½cter Mayï¿½scula");
+		printf("\n2. Verificar si es un carï¿½cter Minï¿½scula");
+		printf("\n3. Verificar si un caracter es numï¿½rico:");
 		printf("\n4. Otro"); //ESTE QUEDA PENDIENTE AAAAAA
-		printf("\n5. Convierte de mayúscula un caracter");
-		printf("\n6. Convierte de minúscula un caracter");
+		printf("\n5. Convierte a mayï¿½scula un caracter");
+		printf("\n6. Convierte a minï¿½scula un caracter");
 		printf("\n0. Fin");
-		printf("\nEscriba su opción: ");
+		printf("\nEscriba su opciï¿½n: ");
 		scanf("%d", &opcion);
 		
 		if(opcion<0 || opcion>6){
 			printf("\n\n******************************************");
-			printf("\nOpción no válida...");
+			printf("\nOpciï¿½n no vï¿½lida...");
 			
-			printf("\n1. Verificar si es un carácter Mayúscula");
-			printf("\n2. Verificar si es un carácter Minúscula");
-			printf("\n3. Verificar si un caracter es numérico:");
+			printf("\n1. Verificar si es un carï¿½cter Mayï¿½scula");
+			printf("\n2. Verificar si es un carï¿½cter Minï¿½scula");
+			printf("\n3. Verificar si un caracter es numï¿½rico:");
 			printf("\n4. Otro");
-			printf("\n5. Convierte de mayúscula un caracter");
-			printf("\n5. Convierte de minúscula un caracter");
+			printf("\n5. Convierte de mayï¿½scula un caracter");
+			printf("\n5. Convierte de minï¿½scula un caracter");
 			printf("\n0. Fin");
-			printf("\nEscriba su opción: ");
+			printf("\nEscriba su opciï¿½n: ");
 			scanf("%d", &opcion);
 			continue;			
 		}
+		//Llaado a la funcion "opciones" para redirigir a nuevas funciones especializadas
 		opciones(opcion);
 		
-	} while(opcion!=0);
+	} while(opcion != 0);
 	
 	return 0;
 }
-
 
 //FUNCION DE LAS OPCIONES
 void opciones(int opcion){
@@ -73,7 +75,7 @@ void opciones(int opcion){
 		verificanumerico();
 		break;
 	case 4:
-		printf("Qda pendiente");	
+		funcionEspecial();	
 		break;
 	case 5:
 		mayuscaracter();	
@@ -90,8 +92,8 @@ void opciones(int opcion){
 void verficamayusculas(){
 	char letra;
 	printf("\n\n------------------------------------------");
-	printf("\n0 = No mayúscula");
-	printf("\n1 = Mayúscula");
+	printf("\n0 = No mayï¿½scula");
+	printf("\n1 = Mayï¿½scula");
 	printf("\n\n------------------------------------------");
 	printf("\nEscriba una letra: ");
 	scanf(" %c", &letra);
@@ -104,8 +106,6 @@ void verficamayusculas(){
 	}
 	
 }
-
-	
 	
 //FUNCION QUE VERIFICA MINUSCULAS ----------------------------------------------	
 void verficaminusculas(){
@@ -125,14 +125,12 @@ void verficaminusculas(){
 	}
 }
 
-	
-	
 //VERIFICA SI ES NUMERICO
 void verificanumerico(){
 	char numero;
 	printf("\n\n------------------------------------------");
-	printf("\n0 = No numérico");
-	printf("\n1 = Numérico");
+	printf("\n0 = No numï¿½rico");
+	printf("\n1 = Numï¿½rico");
 	printf("\n------------------------------------------");
 	printf("\nEscriba una numero: ");
 	scanf(" %c", &numero);
@@ -141,16 +139,26 @@ void verificanumerico(){
 		printf("1"); //Numerico 0 1 2 ... 9
 	}
 	else{
-		printf("0"); // No numérico
+		printf("0"); // No numï¿½rico
 	}
 }
 
-	
+void funcionEspecial(){
+	char valor;
+
+	if((valor >= 32 && valor <= 64) || (valor >= 91 && valor <= 96) || (valor >= 123 && valor <= 254)){
+		printf("Este es un caracter especial. \nEs el simbolo x del codigo ASCII.")
+	}
+	else{
+		printf("El caracter digitado no es un simbolo.")
+	}
+}
+
 //CONVERTIR A MAYUSCULA
 void mayuscaracter(){
 	char letra;
 	printf("\n\n------------------------------------------");
-	printf("\nConvierte a mayúscula un caracter");
+	printf("\nConvierte a mayï¿½scula un caracter");
 	printf("\n------------------------------------------");
 	printf("\nEscriba una letra: ");
 	scanf(" %c", &letra);
@@ -159,7 +167,7 @@ void mayuscaracter(){
 		printf("%c", letra); // Se imprime lo mismo, ya era mayus
 	}
 	if(letra>=97 && letra<=122){
-		letra=letra-32;
+		letra = letra-32;
 		printf("%c", letra); //De min a mayus
 	}
 	else{
@@ -167,14 +175,13 @@ void mayuscaracter(){
 	}
 	
 }
-	
-	
+		
 //CONVERTIR A MINUSCULA
 
 void minuscaracter(){
 	char letra;
 	printf("\n\n------------------------------------------");
-	printf("\nConvierte a minúscula un caracter");
+	printf("\nConvierte a minï¿½scula un caracter");
 	printf("\n------------------------------------------");
 	printf("\nEscriba una letra: ");
 	scanf(" %c", &letra);
@@ -183,7 +190,7 @@ void minuscaracter(){
 		printf("%c", letra);// Se imprime lo mismo, ya era min
 	}
 	if(letra>=65 && letra<=90){
-		letra=letra+32;
+		letra = letra+32;
 		printf("%c", letra); // De Mayus a min
 	}
 	else{
