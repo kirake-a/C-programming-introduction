@@ -147,11 +147,11 @@ void verificanumerico(){
 void funcionEspecial(){
 	char valor;
 
-	printf("Inserte un valor del codigo ASCII ");
+	printf("Inserte un caracter ");
 	scanf(" %c", &valor);
 
 	if((valor >= 33 && valor <= 64) || (valor >= 91 && valor <= 96) || (valor >= 123 && valor <= 254)){
-		printf("\nEste es un caracter especial. \nEs el simbolo %c del codigo ASCII.", valor);
+		printf("\nEste es un caracter especial. \nEl simbolo %c corresponde al numero %d en el codigo ASCII.", valor, valor);
 	}
 	else{
 		printf("El caracter digitado no es un simbolo, es una letra o un numero.");
