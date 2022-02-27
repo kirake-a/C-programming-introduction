@@ -143,8 +143,12 @@ void verificanumerico(){
 	}
 }
 
+//Funcion para la verificacion de simbolos
 void funcionEspecial(){
 	char valor;
+
+	printf("Inserte un simbolo: ");
+	scanf("%c", &valor);
 
 	if((valor >= 32 && valor <= 64) || (valor >= 91 && valor <= 96) || (valor >= 123 && valor <= 254)){
 		printf("Este es un caracter especial. \nEs el simbolo %c del codigo ASCII.");
