@@ -19,7 +19,7 @@ int main(){
     //Variables for all the seccion for the switch sentence
     int decition, num1, num2, n_position, the_factorial, base, exponent;
 
-    //How does the results are given into the switch sentence? Variables.
+    //How does the results of the functions are given into the switch sentence? Variables.
     int result_mult, result_fibonacci, result_factorialNumber, result_exponential;
     int case_base1 = 0, case_base2 = 1;
 
