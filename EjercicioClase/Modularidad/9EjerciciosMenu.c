@@ -53,8 +53,8 @@ void enteros10(){
 
     int i, valor, contador_par = 0,contador_impar = 0, comprobar;
 
-    for (i = 0; i <= 10; i++){
-        printf("Inserte al numero %d", i);
+    for (i = 0; i < 10; i++){
+        printf("Inserte al numero %d: ", i+1);
         scanf(" %d", &valor);
 
         comprobar = valor % 2;
