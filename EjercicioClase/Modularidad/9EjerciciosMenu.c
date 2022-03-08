@@ -9,13 +9,14 @@ numero 169, la funcion debera regresar 961 */
 void enteros10();
 int invertirNumero();
 void printF1(int cont_par, int cont_impar);
+void printF2(int result);
 
 int main(){
 
     int opcion, num_inverso;
 
     do{
-        printf("Seleccione la opcion que desea realizar: ");
+        printf("\n\nSeleccione la opcion que desea realizar: ");
         printf("\n1. Determinar 10 enteros, pares e impares.");
         printf("\n2. Invertir los digitos de un numero.");
         printf("\n0. Finalizar el programa.");
@@ -25,7 +26,7 @@ int main(){
         if(opcion < 0 || opcion > 3){
             printf("\n\nOpcion invalida, digite de nuevo...\n");
 
-            printf("Seleccione la opcion que desea realizar: ");
+            printf("\n\nSeleccione la opcion que desea realizar: ");
             printf("\n1. Determinar 10 enteros, pares e impares.");
             printf("\n2. Invertir los digitos de un numero.");
             printf("\n0. Finalizar el programa.");
@@ -40,6 +41,7 @@ int main(){
         }
         else if(opcion == 2){
             num_inverso = invertirNumero();
+            printF2(num_inverso);
         }
 
     }while(opcion != 0);
@@ -74,7 +76,7 @@ void printF1(int cont_par, int cont_impar){
 }
 
 int invertirNumero(){
-    int num, result;
+    int num, result, centenas, moddecenas, decenas, unidades;
 
     do{
         printf("Inserte un numero de 3 digitos: ");
@@ -84,8 +86,18 @@ int invertirNumero(){
             printf("\n\nValor incorrecto...");
         }
 
-        
+        centenas = num / 100;
+        moddecenas = num % 100;
+        decenas = moddecenas / 10;
+        unidades = moddecenas % 10;
+
+        result = centenas + (decenas * 10) + (unidades * 100);
+
     } while (num < 99 || num >= 1000);
 
     return result;
+}
+
+void printF2(int result){
+    printf("El nuevo numero es: %d", result);
 }
