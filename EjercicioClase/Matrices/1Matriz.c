@@ -16,6 +16,7 @@ int main(){
         }
     }
 
+    //Printeando la matriz obtenida de la digitacion del usuario
     for (i = 0; i < tam; i++){
         for (j = 0; j < tam; j++){
             printf("%d\t", matriz[i][j]);
