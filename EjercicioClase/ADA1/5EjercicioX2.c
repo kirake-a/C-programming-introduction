@@ -24,7 +24,6 @@ int main()
     // The process, with do-while, it ends when the user enters a 0
     do
     {
-
         // Giving a value for the main variables
         printf("\nDigite 0 si desea terminar el programa.");
         printf("\nDigite la cantidad de años que ha laborado en la empresa: ");
@@ -36,6 +35,7 @@ int main()
         tip_p = tip(year_work, years_company);
         extra_tip = extraTip(year_work, salary, tip_p, years_company);
         new_salary = theNewSalary(salary, extra_tip, year_work, years_company);
+        
         reporte(new_salary, extra_tip, year_work, years_company);
 
     } while (year_work != 0 || salary != 0);
