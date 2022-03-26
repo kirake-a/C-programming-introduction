@@ -25,7 +25,8 @@ int main(){
     do{
         // Desplazo del menu de opciones para hacer con el arreglo ya digitado con las calificaciones de los usuarios
         printf("\n\nMenu:");
-        printf("\n1. Listar notas. \n2. Calcular la media. \n3. Calcular el menor \n4. Calcular el mayor.\n0. Terminar el programa. \n\n");
+        printf("\n1. Listar notas. \n2. Calcular la media. \n3. Calcular el menor \n4. Calcular el mayor.\n5. Cantidad de reprobados.\n");
+        printf("0. Terminar el programa. \n\n");
         printf("Lo que desea hacer es con el array: ");
         scanf("%d", &opcion);
 
@@ -43,6 +44,10 @@ int main(){
         if (opcion == 4)
         {
             elMayor(calif);
+        }
+        if (opcion == 5)
+        {
+            cantidadReprobados(calif);
         }
 
     } while (opcion != 0);
