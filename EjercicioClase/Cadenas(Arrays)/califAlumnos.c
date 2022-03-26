@@ -8,6 +8,7 @@ void listarArray(float calif[tam]);
 void mediaAritmetica(float calif[tam]);
 void elMenor(float calif[tam]);
 void elMayor(float calif[tam]);
+void cantidadReprobados(float calif[tam]);
 
 int main(){
 
@@ -23,13 +24,13 @@ int main(){
 
     do{
         // Desplazo del menu de opciones para hacer con el arreglo ya digitado con las calificaciones de los usuarios
-        printf("Menu:");
-        printf("\n1. Listar notas. \n2. Calcular la media. \n3. Calcular el menor \n4. Calcular el mayor.\n");
-        printf("Lo que desea hacer es: ");
+        printf("\n\nMenu:");
+        printf("\n1. Listar notas. \n2. Calcular la media. \n3. Calcular el menor \n4. Calcular el mayor.\n0. Terminar el programa. \n\n");
+        printf("Lo que desea hacer es con el array: ");
         scanf("%d", &opcion);
 
         if(opcion == 1){
-            listaArray(calif);
+            listarArray(calif);
         }
         if (opcion == 2)
         {
@@ -53,7 +54,7 @@ void listarArray(float calif[tam]){
     int i;
 
     for (i = 0; i < tam; i++){
-        printf(" %d, ", calif[i]);
+        printf("* %.3f\n", calif[i]);
     }
 }
 
@@ -82,7 +83,7 @@ void elMenor(float calif[tam]){
         }
     }
 
-    printf("El valor mas chico del arreglo es: %f", menor);
+    printf("La calificacion menor es: %f", menor);
 }
 
 void elMayor(float calif[tam]){
@@ -93,11 +94,24 @@ void elMayor(float calif[tam]){
 
     for (i = 0; i < tam; i++)
     {
-        if (calif[i] < mayor)
+        if (calif[i] > mayor)
         {
             mayor = calif[i];
         }
     }
 
-    printf("El valor mas grande del arreglo es: %f", mayor);
+    printf("La calificacion mayor es: %f", mayor);
+}
+
+// Se agregaron funciones extra al programa...
+void cantidadReprobados(float calif[tam]){
+    int i, contador = 0;
+
+    for (i = 0; i < tam; i++){
+        if (calif[i] < 70){
+            contador += 1;
+        }
+    }
+
+    printf("En la lista estan reprobados %d alumnos.", contador);
 }
