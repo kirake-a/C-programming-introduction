@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 /* Una secuencia de caracteres o simbolos entre comillas dobles hace alucion a una cadena, para una cadena usamos el
 %s */
@@ -8,13 +9,19 @@
 
 int main(){
 
-    char nombre[20];
+    char nombre[60], apellido[60];
 
     // Utilizando la funcion gets para insertar datos en string por el usuario
     printf("Escriba su nombre: ");
     gets(nombre);
+    printf("Escriba su apellido: ");
+    gets(apellido);
 
-    printf(nombre);
+    printf("%s, %s\n\n", apellido, nombre);
+
+    strcat(nombre, apellido);
+
+    puts(nombre);
 
     return 0;
 }
