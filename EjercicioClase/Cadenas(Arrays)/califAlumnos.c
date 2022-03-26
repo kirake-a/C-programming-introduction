@@ -73,7 +73,7 @@ void mediaAritmetica(float calif[tam]){
 
     promedio = sumatoria / tam;
 
-    printf("El promedio de calificaciones de los alumnos es: %f", promedio);
+    printf("El promedio de calificaciones de los alumnos es: %.3f", promedio);
 }
 
 void elMenor(float calif[tam]){
@@ -88,7 +88,7 @@ void elMenor(float calif[tam]){
         }
     }
 
-    printf("La calificacion menor es: %f", menor);
+    printf("La calificacion menor es: %.3f", menor);
 }
 
 void elMayor(float calif[tam]){
@@ -105,7 +105,7 @@ void elMayor(float calif[tam]){
         }
     }
 
-    printf("La calificacion mayor es: %f", mayor);
+    printf("La calificacion mayor es: %.3f", mayor);
 }
 
 // Se agregaron funciones extra al programa...
