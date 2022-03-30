@@ -176,20 +176,19 @@ void promedioCalificacionesAlum(float matriz[fila][columna]){
         for (j = 0; j < columna; j++){
 
             if(i == 0){
-                suma1 += matriz[1][j];
+                suma1 += matriz[0][j];
             }
             else if(i == 1){
-                suma2 += matriz[2][j];
+                suma2 += matriz[1][j];
             }
             else if(i == 2){
-                suma2 += matriz[3][j];
+                suma3 += matriz[2][j];
             }
 
         }
     }
 
-    printf("\nsuma1 %d", suma1);
-
+// Definiendo promedios de los alumnos
     promedio1 = suma1 / columna;
     promedio2 = suma2 / columna;
     promedio3 = suma3 / columna;
@@ -198,21 +197,9 @@ void promedioCalificacionesAlum(float matriz[fila][columna]){
 }
 
 void outputPromedioAlum(float media1, float media2, float media3){
-    printf("\n\n");
+    printf("\n\nCalificaciones promedio de los alumnos\n\n");
 
-    for (int i = 1; i <= columna; i++){
-        switch(i){
-            case 1:
-                printf("\nLa calificacion promedio del alumno %d es: %f", i, media1);
-                break;
-            case 2:
-                printf("\nLa calificacion promedio del alumno %d es: %f", i, media2);
-                break;
-            case 3:
-                printf("\nLa calificacion promedio del alumno %d es: %f", i, media3);
-                break;
-            default:
-                printf("Este valor en i no existe...");
-        }
-    }
+    printf("\nLa calificacion promedio del alumno 1 es: %f", media1);
+    printf("\nLa calificacion promedio del alumno 2 es: %f", media2);
+    printf("\nLa calificacion promedio del alumno 3 es: %f", media3);
 }
