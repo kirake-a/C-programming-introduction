@@ -6,6 +6,8 @@
 void outputPrintMatriz(float matriz[fila][columna]);
 void valorCalificacionesMenores(float matriz[fila][columna]);
 void valorCalificacionesMayores(float matriz[fila][columna]);
+void puntosExtra();
+void promedioCalificaciones();
 
 int main(){
 
@@ -91,4 +93,9 @@ void valorCalificacionesMayores(float matriz[fila][columna]){
     printf("\nLa calificacion mayor entre los alumnos es: %.3f", mayor_calif);
     // Falta conocer a que alumno le corresponde esa calif
     printf("\nLa calificacion mayor corresponde al alumno: %d", alumno);
+}
+
+// Funcion para agregarle puntos extra a los alumnos... no se debera pasar de 100 puntos por calificacion dada...
+void puntosExtra(){
+
 }
