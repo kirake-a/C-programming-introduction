@@ -51,6 +51,8 @@ int main(){
 void outputPrintMatriz(float matriz[fila][columna]){
     int i, j;
 
+    printf("\n\nLas calificaciones de los alumnos\n\n");
+
     for (i = 0; i < fila; i++){
         for (j = 0; j < columna; j++){
             printf("Calif%d=\t", j + 1);
@@ -249,8 +251,8 @@ void outputPromedioParcial(float promedio1, float promedio2, float promedio3, fl
     printf("\n\nPromedio de calificaciones parciales\n\n");
 
     printf("\nLa calificacion promedio del parcial 1 es: %.3f", promedio1);
-    printf("\nLa calificacion promedio del parcial 2 es: %.3f", promedio1);
-    printf("\nLa calificacion promedio del parcial 3 es: %.3f", promedio1);
-    printf("\nLa calificacion promedio del parcial 4 es: %.3f", promedio1);
-    printf("\nLa calificacion promedio del parcial 5 es: %.3f", promedio1);
+    printf("\nLa calificacion promedio del parcial 2 es: %.3f", promedio2);
+    printf("\nLa calificacion promedio del parcial 3 es: %.3f", promedio3);
+    printf("\nLa calificacion promedio del parcial 4 es: %.3f", promedio4);
+    printf("\nLa calificacion promedio del parcial 5 es: %.3f", promedio5);
 }
