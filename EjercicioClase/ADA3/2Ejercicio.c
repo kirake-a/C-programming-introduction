@@ -104,6 +104,7 @@ void puntosExtra(float matriz[fila][columna]){
 
     printf("\n\n");
 
+    // Definiendo la posicion de la matriz y la calificacion extra
     printf("Ingrese el numero de alumno al que se le asiganara la calificacion extra: ");
     scanf("%d", &alumno);
     printf("La calificacion que desea aumentar: ");
@@ -126,11 +127,14 @@ void puntosExtra(float matriz[fila][columna]){
         scanf("%f", &puntaje);
     }
 
+    // Se esta restando 1 a las posiciones por las condiciones de las posiciones en arreglos y matrices...
     alumno -= 1;
     calif -= 1;
 
     matriz[alumno][calif] += puntaje;
 
+    /* Determinar si la calificacion nueva suma mas de 100 entonces nada mas se iguala a 100
+    porque no se puede tener mas calificacion que 100 puntos */
     if(matriz[alumno][calif] > 100){
         matriz[alumno][calif] = 100;
     }
@@ -141,7 +145,7 @@ void puntosExtra(float matriz[fila][columna]){
 void printNuevaMatriz(float matriz[fila][columna]){
     int i, j;
 
-    printf("\n\nCalificaciones modificadas: \n");
+    printf("\n\nCalificaciones modificadas: \n\n");
 
     for (i = 0; i < fila; i++)
     {
