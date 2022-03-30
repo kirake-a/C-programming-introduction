@@ -4,11 +4,18 @@
 #define columna 5
 
 void outputPrintMatriz(float matriz[fila][columna]);
+
+// Funciones -- Calculando calificacion mayor y menor
 void valorCalificacionesMenores(float matriz[fila][columna]);
 void valorCalificacionesMayores(float matriz[fila][columna]);
+
+// Funciones -- Puntos extra
 void puntosExtra(float matriz[fila][columna]);
 void printNuevaMatriz(float matriz[fila][columna]);
-void promedioCalificaciones();
+
+// Funciones -- Calcular el promedio de los alumnos
+void promedioCalificacionesAlum(float matriz[fila][columna]);
+void outputPromedioAlum(float media1, float media2, float media3);
 
 int main(){
 
@@ -140,8 +147,10 @@ void puntosExtra(float matriz[fila][columna]){
     }
 
     printNuevaMatriz(matriz);
+    promedioCalificacionesAlum(matriz);
 }
 
+// Printeo nuevamente de la matriz resultante con la calificacion en puntos extra
 void printNuevaMatriz(float matriz[fila][columna]){
     int i, j;
 
@@ -155,5 +164,55 @@ void printNuevaMatriz(float matriz[fila][columna]){
             printf("%.3f\t", matriz[i][j]);
         }
         printf("\n");
+    }
+}
+
+void promedioCalificacionesAlum(float matriz[fila][columna]){
+    float suma1 = 0, suma2 = 0, suma3 = 0;
+    float promedio1, promedio2, promedio3;
+    int i, j;
+
+    for (i = 0; i < fila; i++){
+        for (j = 0; j < columna; j++){
+
+            if(i == 0){
+                suma1 += matriz[1][j];
+            }
+            else if(i == 1){
+                suma2 += matriz[2][j];
+            }
+            else if(i == 2){
+                suma2 += matriz[3][j];
+            }
+
+        }
+    }
+
+    printf("\nsuma1 %d", suma1);
+
+    promedio1 = suma1 / columna;
+    promedio2 = suma2 / columna;
+    promedio3 = suma3 / columna;
+
+    outputPromedioAlum(promedio1, promedio2, promedio3);
+}
+
+void outputPromedioAlum(float media1, float media2, float media3){
+    printf("\n\n");
+
+    for (int i = 1; i <= columna; i++){
+        switch(i){
+            case 1:
+                printf("\nLa calificacion promedio del alumno %d es: %f", i, media1);
+                break;
+            case 2:
+                printf("\nLa calificacion promedio del alumno %d es: %f", i, media2);
+                break;
+            case 3:
+                printf("\nLa calificacion promedio del alumno %d es: %f", i, media3);
+                break;
+            default:
+                printf("Este valor en i no existe...");
+        }
     }
 }
