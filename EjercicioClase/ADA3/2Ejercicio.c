@@ -17,6 +17,10 @@ void printNuevaMatriz(float matriz[fila][columna]);
 void promedioCalificacionesAlum(float matriz[fila][columna]);
 void outputPromedioAlum(float media1, float media2, float media3);
 
+// Funciones -- Calcular el promedio de los parciales
+void promedioCalifParciales(float matriz[fila][columna]);
+void outputPromedioParcial(float promedio1, float promedio2, float promedio3, float promedio4, float promedio5);
+
 int main(){
 
     float matriz[fila][columna];
@@ -148,6 +152,7 @@ void puntosExtra(float matriz[fila][columna]){
 
     printNuevaMatriz(matriz);
     promedioCalificacionesAlum(matriz);
+    promedioCalifParciales(matriz);
 }
 
 // Printeo nuevamente de la matriz resultante con la calificacion en puntos extra
@@ -188,7 +193,7 @@ void promedioCalificacionesAlum(float matriz[fila][columna]){
         }
     }
 
-// Definiendo promedios de los alumnos
+    // Definiendo promedios de los alumnos
     promedio1 = suma1 / columna;
     promedio2 = suma2 / columna;
     promedio3 = suma3 / columna;
@@ -199,7 +204,53 @@ void promedioCalificacionesAlum(float matriz[fila][columna]){
 void outputPromedioAlum(float media1, float media2, float media3){
     printf("\n\nCalificaciones promedio de los alumnos\n\n");
 
-    printf("\nLa calificacion promedio del alumno 1 es: %f", media1);
-    printf("\nLa calificacion promedio del alumno 2 es: %f", media2);
-    printf("\nLa calificacion promedio del alumno 3 es: %f", media3);
+    printf("\nLa calificacion promedio del alumno 1 es: %.3f", media1);
+    printf("\nLa calificacion promedio del alumno 2 es: %.3f", media2);
+    printf("\nLa calificacion promedio del alumno 3 es: %.3f", media3);
+}
+
+void promedioCalifParciales(float matriz[fila][columna]){
+    float suma1 = 0, suma2 = 0, suma3 = 0, suma4 = 0, suma5 = 0;
+    float promedio1, promedio2, promedio3, promedio4, promedio5;
+    int i, j;
+
+    for (j = 0; j < columna; j++){
+        for (i = 0; i < fila; i++){
+
+            if(j == 0){
+                suma1 += matriz[i][0];
+            }
+            else if(j == 1){
+                suma2 += matriz[i][1];
+            }
+            else if(j == 2){
+                suma3 += matriz[i][2];
+            }
+            else if(j == 3){
+                suma4 += matriz[i][3];
+            }
+            else if(j == 4){
+                suma5 += matriz[i][4];
+            }
+        }
+    }
+
+    // Definiendo el promedio de los parciales
+    promedio1 = suma1 / fila;
+    promedio2 = suma2 / fila;
+    promedio3 = suma3 / fila;
+    promedio4 = suma4 / fila;
+    promedio5 = suma5 / fila;
+
+    outputPromedioParcial(promedio1, promedio2, promedio3, promedio4, promedio5);
+}
+
+void outputPromedioParcial(float promedio1, float promedio2, float promedio3, float promedio4, float promedio5){
+    printf("\n\nPromedio de calificaciones parciales\n\n");
+
+    printf("\nLa calificacion promedio del parcial 1 es: %.3f", promedio1);
+    printf("\nLa calificacion promedio del parcial 2 es: %.3f", promedio1);
+    printf("\nLa calificacion promedio del parcial 3 es: %.3f", promedio1);
+    printf("\nLa calificacion promedio del parcial 4 es: %.3f", promedio1);
+    printf("\nLa calificacion promedio del parcial 5 es: %.3f", promedio1);
 }
