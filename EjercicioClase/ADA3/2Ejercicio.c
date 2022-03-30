@@ -7,6 +7,7 @@ void outputPrintMatriz(float matriz[fila][columna]);
 void valorCalificacionesMenores(float matriz[fila][columna]);
 void valorCalificacionesMayores(float matriz[fila][columna]);
 void puntosExtra(float matriz[fila][columna]);
+void printNuevaMatriz(float matriz[fila][columna]);
 void promedioCalificaciones();
 
 int main(){
@@ -134,9 +135,13 @@ void puntosExtra(float matriz[fila][columna]){
         matriz[alumno][calif] = 100;
     }
 
-// -----------------------------------------------
+    printNuevaMatriz(matriz);
+}
+
+void printNuevaMatriz(float matriz[fila][columna]){
     int i, j;
-    printf("\n\n");
+
+    printf("\n\nCalificaciones modificadas: \n");
 
     for (i = 0; i < fila; i++)
     {
