@@ -18,7 +18,11 @@ int main(){
 
     for (j = 0; j < tam; j++){
         printf("Inserte un valor para la cadena entera2[%d]: ", j);
-        scanf("%d", &cadena2[i]);
+        scanf("%d", &cadena2[j]);
+    }
+
+    for (j = 0; j < tam; j++){
+        printf("%d, ", cadena2[i]);
     }
 
     for (i = 0; i < tam; i++){
