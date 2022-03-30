@@ -16,5 +16,15 @@ int main(){
         }
     }
 
+    printf("\n\n");
+
+    // Printeando la matriz obtenida de la digitacion del usuario
+    for (i = 0; i < fila; i++){
+        for (j = 0; j < columna; j++){
+            printf("%.3f\t", matriz[i][j]);
+        }
+        printf("\n");
+    }
+
     return 0;
 }
