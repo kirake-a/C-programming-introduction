@@ -41,7 +41,7 @@ int main(){
 
     printf("\n\nInterseccion:\n");
     for (i = 0; i < a; i++){
-        printf("%f, ", interseccion[i]);
+        printf("%d, ", interseccion[i]);
     }
 
     return 0;
