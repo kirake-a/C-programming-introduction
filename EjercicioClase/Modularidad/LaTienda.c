@@ -7,15 +7,18 @@ float descuento15(float cost);
 float newPrice15(); // Not added yet
 float descuento8(float cost);
 float newPrice8(); // Not added yet
+void finalCost(float cost);
 
 int main(){
-    float cost;
-    int counter = 0, option, discount;
+    float cost, discount, the_price;
+    int counter = 0, option;
 
     do{
         printf("\n\nIngrese un costo negativo si desea finalizar el programa");
         printf("\nIngresar el precio del producto: ");
         scanf("%f", &cost);
+
+        the_price = cost;
 
         /* Evaluating if the cost of the product will have a discount of 8% or 15%, considering
         that if there are more than 5 clients who bought more than $2500 they'll pay -8% */
@@ -26,18 +29,24 @@ int main(){
             if (counter <= 5)
             {
                 discount = descuento15(cost);
-                cost -= discount;
+                the_price -= discount;
+
+                finalCost(the_price);
             }
             else if (counter > 5)
             {
                 discount = descuento8(cost);
-                cost -= discount;
+                the_price -= discount;
+
+                finalCost(the_price);
             }
         }
         else if (cost > 0 && cost < 2500)
         {
             discount = descuento8(cost);
-            cost -= discount;
+            the_price -= discount;
+
+            finalCost(the_price);
         }
 
     } while (cost > 0);
@@ -61,4 +70,9 @@ float descuento8(float cost){
     percentage = cost * 0.08;
 
     return percentage;
+}
+
+// This function only prints for the user the results
+void finalCost(float cost){
+    printf("El costo de su producto sera de $%.3f.", cost);
 }
