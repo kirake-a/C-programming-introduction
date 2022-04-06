@@ -2,6 +2,9 @@
 #include <string.h>
 #define tam 5
 
+int funcionContador(int cadena1[tam], int cadena2[2]);
+void output(int nueva[100], int k);
+
 int main()
 {
 
@@ -24,6 +27,14 @@ int main()
         printf("Inserte un valor para la cadena entera2[%d]: ", j);
         scanf("%d", &cadena2[j]);
     }
+
+    funcionContador(cadena1, cadena2);
+
+    return 0;
+}
+
+int funcionContador(int cadena1[tam], int cadena2[2]){
+    int repeticiones[5];
 
     // COMPARACION
     int contador = 0;
@@ -126,12 +137,14 @@ int main()
         }
     }
 
+    output(nueva, k);
+}
+
+void output(int nueva[100], int k){
     printf("\nLa cantidad de valores que intersecan son: %d", k + 1);
     printf("\nCadena nueva: ");
-    for (int r = 0; r < k + 1; r++)
-    {
+
+    for (int r = 0; r < k + 1; r++){
         printf("%d", nueva[r]);
     }
-
-    return 0;
 }
