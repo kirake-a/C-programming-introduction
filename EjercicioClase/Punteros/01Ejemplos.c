@@ -2,7 +2,7 @@
 #include <string.h>
 
 /* Un apuntador es una variable que contiene la direccion de una variable.
-Los apuntadores se utilizan en C, ya qeue ene ocasiones son la unica forma de 
+Los apuntadores se utilizan en C, ya que en ocasiones son la unica forma de 
 guardar y enviar la informacion. */
 
 /* Desarrollar un programa con una funcion que regrese la longitud de una cadena. */
