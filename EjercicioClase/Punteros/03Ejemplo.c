@@ -40,7 +40,6 @@ void concatenar(char *cadena1, char *cadena2){
         puntero_concat++;
     }
 
-
     puntero_concat = &cadena_concat[tam1];
 
     for (int i = 0; *cadena2 != '\0'; cadena2+=1){
@@ -53,7 +52,7 @@ void concatenar(char *cadena1, char *cadena2){
 }
 
 void print_NewString(char *cadena_concat){
-    printf("Cadena concatenada: %s", cadena_concat);
+    printf("\nCadena concatenada: %s", cadena_concat);
 }
 
     /* GESTION DE MEMORIA DINAMICA CON MALLOC Y CALLOC */
