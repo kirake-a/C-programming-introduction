@@ -28,7 +28,7 @@ int main(){
     if(tam1 == tam2){
         valor_verdad = comparadorCadenas(cadena1, cadena2);
 
-        if(valor_verdad == tam1){
+        if(valor_verdad == 0){
             printf("\nLas cadenas digitadas son iguales.");
         }
         else{
@@ -53,14 +53,34 @@ int comparadorCadenas(char *cadena1, char *cadena2){
     int contador = 0;
 
     // Ciclo while(), con el que se determina que el contenido de las cadenas sea igual
-    while(*cadena1 == *cadena2){
+
+    // Una forma diferente de hacer el ciclo FOR
+   /* while(*cadena1 == *cadena2){
         contador += 1;
 
         cadena1++;
         cadena2++;
     }
 
-    contador -= 1;
+    contador -= 1;*/
+
+    for(int i = 0; *cadena1 != '\0'; cadena1++){
+
+        *cadena1 = toupper(*cadena1);
+        *cadena2 = toupper(*cadena2);
+
+        if(*cadena1 == *cadena2){
+            contador = 0;
+        }
+        else{
+            contador = 1;
+            break;
+        }
+
+        cadena2++;
+    }
+
+    printf("CONTADOR: %d", contador);
 
     // Se devuelve el valor del contador que es bandera de la igualdad de las cadenas
     return contador;
