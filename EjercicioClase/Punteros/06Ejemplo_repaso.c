@@ -1,6 +1,7 @@
 /* Desarrollar un programa con una función que compare dos cadenas de caracteres.
-La función recibe dos punteros con las direcciones deinicio de ambas cadenas y 
+La función recibe dos punteros con las direcciones de inicio de ambas cadenas y 
 si devuelve cero, entonces las dos cadenas son iguales */
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
