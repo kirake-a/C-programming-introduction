@@ -32,5 +32,5 @@ int main(){
         printf("[%d]: %d\t\t[%d]: %d", i + 1, lista[i, i + 1, lista2[i]]);
     }
 
-        return 0;
+    return 0;
 }
